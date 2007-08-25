@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/img" >
+        <file>autowait.png</file>
+        <file>config.png</file>
+        <file>gpclient_48.png</file>
+        <file>gpclient_big.png</file>
+        <file>logout.png</file>
+        <file>nopassword.png</file>
+        <file>nopassword_full.png</file>
+        <file>password.png</file>
+        <file>password_full.png</file>
+        <file>waiting.png</file>
+    </qresource>
+    <qresource prefix="/smileys" >
+        <file>sm_O.png</file>
+        <file>sm_angry.png</file>
+        <file>sm_brejle.png</file>
+        <file>sm_crazy.png</file>
+        <file>sm_cry.png</file>
+        <file>sm_mrk.png</file>
+        <file>sm_sad.png</file>
+        <file>sm_serious.png</file>
+        <file>sm_smich.png</file>
+        <file>sm_smile.png</file>
+        <file>sm_tongue.png</file>
+    </qresource>
+</RCC>

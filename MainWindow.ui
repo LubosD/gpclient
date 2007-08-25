@@ -1,0 +1,616 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1077</width>
+    <height>752</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Neoficiální GamePark klient</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="img/resources.qrc" >:/img/gpclient_48.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <layout class="QGridLayout" >
+    <property name="leftMargin" >
+     <number>9</number>
+    </property>
+    <property name="topMargin" >
+     <number>9</number>
+    </property>
+    <property name="rightMargin" >
+     <number>9</number>
+    </property>
+    <property name="bottomMargin" >
+     <number>9</number>
+    </property>
+    <property name="horizontalSpacing" >
+     <number>6</number>
+    </property>
+    <property name="verticalSpacing" >
+     <number>6</number>
+    </property>
+    <item row="0" column="0" >
+     <widget class="QSplitter" name="splitterHoriz" >
+      <property name="orientation" >
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QSplitter" name="splitterVert" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QWidget" name="layoutWidget" >
+        <layout class="QVBoxLayout" >
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <property name="leftMargin" >
+          <number>0</number>
+         </property>
+         <property name="topMargin" >
+          <number>0</number>
+         </property>
+         <property name="rightMargin" >
+          <number>0</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>12</height>
+            </size>
+           </property>
+           <property name="text" >
+            <string>-- &lt;i>Uživatelé&lt;/i> --</string>
+           </property>
+           <property name="textFormat" >
+            <enum>Qt::RichText</enum>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="margin" >
+            <number>-6</number>
+           </property>
+           <property name="indent" >
+            <number>-1</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTreeView" name="treeUsers" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Expanding" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="verticalScrollBarPolicy" >
+            <enum>Qt::ScrollBarAlwaysOn</enum>
+           </property>
+           <property name="alternatingRowColors" >
+            <bool>true</bool>
+           </property>
+           <property name="selectionMode" >
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior" >
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="rootIsDecorated" >
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget" >
+        <layout class="QVBoxLayout" >
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <property name="leftMargin" >
+          <number>0</number>
+         </property>
+         <property name="topMargin" >
+          <number>0</number>
+         </property>
+         <property name="rightMargin" >
+          <number>0</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="labelGeneralInfo" >
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>12</height>
+            </size>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="textFormat" >
+            <enum>Qt::RichText</enum>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="margin" >
+            <number>-6</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QStackedWidget" name="stackedGame" >
+           <property name="currentIndex" >
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="page" >
+            <layout class="QVBoxLayout" >
+             <property name="spacing" >
+              <number>6</number>
+             </property>
+             <property name="leftMargin" >
+              <number>9</number>
+             </property>
+             <property name="topMargin" >
+              <number>9</number>
+             </property>
+             <property name="rightMargin" >
+              <number>9</number>
+             </property>
+             <property name="bottomMargin" >
+              <number>9</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_2" >
+               <property name="minimumSize" >
+                <size>
+                 <width>0</width>
+                 <height>12</height>
+                </size>
+               </property>
+               <property name="text" >
+                <string>-- &lt;i>Seznam místností&lt;/i> --</string>
+               </property>
+               <property name="alignment" >
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin" >
+                <number>-6</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTreeView" name="treeGames" >
+               <property name="iconSize" >
+                <size>
+                 <width>21</width>
+                 <height>18</height>
+                </size>
+               </property>
+               <property name="rootIsDecorated" >
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_2" >
+            <layout class="QGridLayout" >
+             <property name="leftMargin" >
+              <number>9</number>
+             </property>
+             <property name="topMargin" >
+              <number>9</number>
+             </property>
+             <property name="rightMargin" >
+              <number>9</number>
+             </property>
+             <property name="bottomMargin" >
+              <number>9</number>
+             </property>
+             <property name="horizontalSpacing" >
+              <number>6</number>
+             </property>
+             <property name="verticalSpacing" >
+              <number>6</number>
+             </property>
+             <item row="0" column="0" >
+              <layout class="QVBoxLayout" >
+               <property name="spacing" >
+                <number>6</number>
+               </property>
+               <property name="leftMargin" >
+                <number>0</number>
+               </property>
+               <property name="topMargin" >
+                <number>0</number>
+               </property>
+               <property name="rightMargin" >
+                <number>0</number>
+               </property>
+               <property name="bottomMargin" >
+                <number>0</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" >
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <property name="leftMargin" >
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin" >
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin" >
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin" >
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="pushBack" >
+                   <property name="text" >
+                    <string>Zpět do seznamu místností</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushParameters" >
+                   <property name="enabled" >
+                    <bool>false</bool>
+                   </property>
+                   <property name="text" >
+                    <string>Parametry</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushStart" >
+                   <property name="enabled" >
+                    <bool>false</bool>
+                   </property>
+                   <property name="text" >
+                    <string>Start!</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelStatus" >
+                   <property name="text" >
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTabWidget" name="tabWidget" >
+                 <property name="currentIndex" >
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="tab" >
+                  <attribute name="title" >
+                   <string>Informace od hlavního serveru</string>
+                  </attribute>
+                  <layout class="QGridLayout" >
+                   <property name="leftMargin" >
+                    <number>9</number>
+                   </property>
+                   <property name="topMargin" >
+                    <number>9</number>
+                   </property>
+                   <property name="rightMargin" >
+                    <number>9</number>
+                   </property>
+                   <property name="bottomMargin" >
+                    <number>9</number>
+                   </property>
+                   <property name="horizontalSpacing" >
+                    <number>6</number>
+                   </property>
+                   <property name="verticalSpacing" >
+                    <number>6</number>
+                   </property>
+                   <item row="0" column="0" >
+                    <layout class="QVBoxLayout" >
+                     <property name="spacing" >
+                      <number>6</number>
+                     </property>
+                     <property name="leftMargin" >
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin" >
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin" >
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin" >
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="labelGameTime" >
+                       <property name="text" >
+                        <string/>
+                       </property>
+                       <property name="textFormat" >
+                        <enum>Qt::RichText</enum>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="labelGameType" >
+                       <property name="text" >
+                        <string/>
+                       </property>
+                       <property name="textFormat" >
+                        <enum>Qt::RichText</enum>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTreeView" name="treeServerInfo" >
+                       <property name="rootIsDecorated" >
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="tab_2" >
+                  <attribute name="title" >
+                   <string>Informace od herního serveru</string>
+                  </attribute>
+                  <layout class="QGridLayout" >
+                   <property name="leftMargin" >
+                    <number>9</number>
+                   </property>
+                   <property name="topMargin" >
+                    <number>9</number>
+                   </property>
+                   <property name="rightMargin" >
+                    <number>9</number>
+                   </property>
+                   <property name="bottomMargin" >
+                    <number>9</number>
+                   </property>
+                   <property name="horizontalSpacing" >
+                    <number>6</number>
+                   </property>
+                   <property name="verticalSpacing" >
+                    <number>6</number>
+                   </property>
+                   <item row="0" column="0" >
+                    <layout class="QVBoxLayout" >
+                     <property name="spacing" >
+                      <number>6</number>
+                     </property>
+                     <property name="leftMargin" >
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin" >
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin" >
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin" >
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="labelMap" >
+                       <property name="text" >
+                        <string/>
+                       </property>
+                       <property name="textFormat" >
+                        <enum>Qt::RichText</enum>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="labelMod" >
+                       <property name="text" >
+                        <string/>
+                       </property>
+                       <property name="textFormat" >
+                        <enum>Qt::RichText</enum>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTreeView" name="treeGameInfo" >
+                       <property name="rootIsDecorated" >
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="layoutWidget" >
+       <layout class="QVBoxLayout" >
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <property name="leftMargin" >
+         <number>0</number>
+        </property>
+        <property name="topMargin" >
+         <number>0</number>
+        </property>
+        <property name="rightMargin" >
+         <number>0</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTextEdit" name="textChat" >
+          <property name="verticalScrollBarPolicy" >
+           <enum>Qt::ScrollBarAlwaysOn</enum>
+          </property>
+          <property name="readOnly" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" >
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <property name="leftMargin" >
+           <number>0</number>
+          </property>
+          <property name="topMargin" >
+           <number>0</number>
+          </property>
+          <property name="rightMargin" >
+           <number>0</number>
+          </property>
+          <property name="bottomMargin" >
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLineEdit" name="lineChat" />
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushChat" >
+            <property name="text" >
+             <string>Odeslat</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" >
+   <property name="sizeGripEnabled" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar" >
+   <property name="movable" >
+    <bool>false</bool>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="toolButtonStyle" >
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionExit" />
+   <addaction name="actionConfig" />
+   <addaction name="actionWaitForRoom" />
+   <addaction name="actionAbout" />
+  </widget>
+  <action name="actionExit" >
+   <property name="icon" >
+    <iconset resource="img/resources.qrc" >:/img/logout.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Ukončit</string>
+   </property>
+  </action>
+  <action name="actionConfig" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="icon" >
+    <iconset resource="img/resources.qrc" >:/img/config.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Konfigurace</string>
+   </property>
+  </action>
+  <action name="actionAbout" >
+   <property name="icon" >
+    <iconset resource="img/resources.qrc" >:/img/gpclient_48.png</iconset>
+   </property>
+   <property name="text" >
+    <string>O aplikaci</string>
+   </property>
+  </action>
+  <action name="actionWaitForRoom" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="icon" >
+    <iconset resource="img/resources.qrc" >:/img/autowait.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Čekat na místnost</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="img/resources.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>lineChat</sender>
+   <signal>returnPressed()</signal>
+   <receiver>pushChat</receiver>
+   <slot>animateClick()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>842</x>
+     <y>671</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1033</x>
+     <y>679</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
