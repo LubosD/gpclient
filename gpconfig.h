@@ -63,7 +63,7 @@ struct GameConfig
 	int protoid, poffset;
 };
 
-void processGameConfig(QBuffer& buffer);
+QString processGameConfig(QBuffer& buffer);
 bool haveGameConfig();
 bool haveGameConfig(QString id);
 QList<GameConfig>& getGameConfig();

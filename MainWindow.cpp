@@ -72,8 +72,8 @@ MainWindow::MainWindow(QString infile)
 		throw QString::fromUtf8("Vstupní soubor je neplatný.");
 	
 	// desifrovat data ze vstupu
-	QByteArray array = decryptString(m_mapInput.value("Params"));
-	QBuffer buffer(&array);
+	m_array = decryptString(m_mapInput.value("Params"));
+	QBuffer buffer(&m_array);
 	buffer.open(QBuffer::ReadOnly);
 	parseKeyValue(&buffer, m_mapInput);
 	
@@ -84,7 +84,6 @@ MainWindow::MainWindow(QString infile)
 	//stahnout config
 	printStatus(QString::fromUtf8("Stahuji herní konfiguraci..."));
 	sendGetQuery(QUrl("http://gpclient.dolezel.info:80/client/gameconfig.php"), RequestGameConfig);
-	sendAuth(array);
 	
 	m_timer.start(10000);
 }
@@ -499,15 +498,16 @@ void MainWindow::doneGameConfig(QBuffer& buffer, bool error)
 	}
 	else
 	{
-		processGameConfig(buffer);
+		m_strSkin = processGameConfig(buffer);
 		actionConfig->setEnabled(true);
+		sendAuth(m_array);
 		
-		if(m_state == StateConnectingWait)
+		/*if(m_state == StateConnectingWait)
 		{
 			m_state = StateConnecting;
 			qDebug() << "Resuming delayed connect";
 			sendLogin();
-		}
+		}*/
 		
 		// ziskat info o updatu
 		sendGetQuery(QUrl("http://gpclient.dolezel.info:80/client/getversion.php?myver=" CLIENT_VERSION), RequestGetVersion);
@@ -570,7 +570,7 @@ void MainWindow::sendAuth(QByteArray encdata)
 	QString localip = generateLocalIP();
 	
 	encdata.append(localip);
-	encdata.append("SkinGps=8843FFD818D8C2B4FB73E3363473EE13\r\nSkin=Default\r\n");
+	encdata.append(QString("SkinGps=%1\r\n").arg(m_strSkin));
 	
 	fields.set("Params", QUrl::toPercentEncoding(encryptString(encdata)));
 	

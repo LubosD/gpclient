@@ -88,26 +88,36 @@ bool haveGameConfig()
 	return !m_config.empty();
 }
 
-void processGameConfig(QBuffer& buffer)
+QString processGameConfig(QBuffer& buffer)
 {
 	QTextStream stream(&buffer);
+	QString skin;
 	
 	while(!stream.atEnd())
 	{
 		GameConfig conf;
 		QStringList params = stream.readLine().trimmed().split('\t');
 		
-		if(params.size() < 5)
+		if(!params.size())
 			continue;
 		
-		conf.id = params[0];
-		conf.command = params[1];
-		conf.name = params[2];
-		conf.protoid = params[3].toLong();
-		conf.poffset = params[4].toLong();
-		
-		m_config.append(conf);
+		if(params[0] == "skin")
+		{
+			skin = params[1];
+		}
+		else if(params.size() == 5)
+		{
+			conf.id = params[0];
+			conf.command = params[1];
+			conf.name = params[2];
+			conf.protoid = params[3].toLong();
+			conf.poffset = params[4].toLong();
+			
+			m_config.append(conf);
+		}
 	}
+	
+	return skin;
 }
 
 QList<GameConfig>& getGameConfig()

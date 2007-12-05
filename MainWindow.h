@@ -144,7 +144,8 @@ private:
 	TreeModel* m_pServerModel;
 	TreeModel* m_pGameServerModel;
 	
-	QString m_strID, m_strAuth;
+	QString m_strID, m_strAuth, m_strSkin;
+	QByteArray m_array;
 	QUrl m_url;
 	int m_nGame;
 	QSettings m_settings;
