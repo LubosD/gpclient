@@ -17,9 +17,12 @@ public:
 		applyPalette(textLicense, PaletteEdit);
 		connect(pushAboutQt, SIGNAL(clicked()), this, SLOT(aboutQt()));
 		
-		QFile file("LICENSE");
-		if(file.open(QIODevice::ReadOnly))
-			textLicense->setPlainText(QString(file.readAll().constData()));
+		QFile file("/usr/share/gpclient/LICENSE");
+		if(!file.open(QIODevice::ReadOnly))
+			file.setFileName("./LICENSE");
+		if(!file.open(QIODevice::ReadOnly))
+			return;
+		textLicense->setPlainText(QString(file.readAll().constData()));
 	}
 public slots:
 	void aboutQt()

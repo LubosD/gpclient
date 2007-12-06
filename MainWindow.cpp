@@ -31,7 +31,7 @@
 #endif
 
 #define PROTOCOL_VERSION "1.02"
-#define CLIENT_VERSION "0.9.94"
+#define CLIENT_VERSION "0.9.95"
 
 MainWindow::MainWindow(QString infile)
 	: m_nPing(0), m_nCycle(0), m_pChat(0), m_nGame(-1), m_state(StateConnecting), m_bWaitForRoom(false)

@@ -138,7 +138,7 @@
          <item>
           <widget class="QLabel" name="label_2" >
            <property name="text" >
-            <string>&lt;h1>GamePark klient pro Linux&lt;/h1>&lt;br>&lt;b>&lt;i>verze 1.0 alpha4&lt;/i>&lt;/b>&lt;br>Copyright © 2005-2007 Luboš Doležel &amp;lt;lubos@dolezel.info&amp;gt;&lt;br>&lt;br>&lt;b>Web:&lt;/b> http://gpclient.dolezel.info&lt;br>&lt;font color="red">Tento klient vznikl BEZ spolupráce serveru GamePark.cz. Je tedy neoficiální a jeho použití je na vlastní riziko. Používáním klienta riskujete ban ze strany administrátorů serveru.&lt;/font></string>
+            <string>&lt;center>&lt;h1>GamePark klient pro Linux&lt;/h1>&lt;br>&lt;b>&lt;i>verze 1.0 alpha5&lt;/i>&lt;/b>&lt;br>Copyright © 2005-2007 Luboš Doležel &amp;lt;lubos@dolezel.info&amp;gt;&lt;br>&lt;br>&lt;b>Web:&lt;/b> http://gpclient.dolezel.info&lt;br>&lt;font color="red">Tento klient vznikl BEZ spolupráce serveru GamePark.cz. Je tedy neoficiální a jeho použití je na vlastní riziko. Používáním klienta riskujete ban ze strany administrátorů serveru.&lt;/font></string>
            </property>
            <property name="textFormat" >
             <enum>Qt::RichText</enum>

@@ -3,12 +3,16 @@ TARGET = gpclient
 LIBS += -lssl
 QT += network
 
-INSTALL_ROOT = /usr/local/bin # Kam nainstalovat
+INSTALL_ROOT = /usr/bin # Kam nainstalovat
 
 #extradata.files = gpclient
 #extradata.path = $$INSTALL_ROOT
 target.path = $$INSTALL_ROOT
 INSTALLS += target
+
+other_data.files = LICENSE
+other_data.path = /usr/share/gpclient
+INSTALLS += other_data
 
 #CONFIG += debug
 #DEPENDPATH += .
