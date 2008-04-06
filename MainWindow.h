@@ -57,6 +57,8 @@ public slots:
 	void printError(QString error);
 	void printStatus(QString msg);
 	
+	void showError(QString error);
+	
 	void userMessage(QString user, QString text);
 	void userJoin(QString user);
 	void userLeave(QString user, QString reason);

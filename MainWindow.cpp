@@ -486,7 +486,7 @@ void MainWindow::requestFinished(int id, bool error)
 			doneGameAll(*request.buffer, error); break;
 		}
 		
-		delete request.buffer;
+		request.buffer->deleteLater();
 	}
 }
 
@@ -642,8 +642,8 @@ void MainWindow::sendLogin()
 			printError(QString::fromUtf8("Hra \"%1\" není klientem podporována").arg(m_mapConnect.value("TYPE")));
 			printError(QString::fromUtf8("Pokud jste si jist, že hra na vaší platformě funguje, požádejte o její přidání."));
 			
-			/*QMessageBox::critical(this, "GamePark klient",
-			QString::fromUtf8("Tato hra není klientem podporována. Pokud jste si jist, že hra na vaší platformě funguje, požádejte o její přidání."));*/
+			QMetaObject::invokeMethod(this, "showError", Qt::QueuedConnection,
+					  Q_ARG(QString, QString::fromUtf8("Tato hra není klientem podporována. Pokud jste si jist, že hra na vaší platformě funguje, požádejte o její přidání.")));
 		}
 		else
 		{
@@ -1111,6 +1111,12 @@ void MainWindow::sendSetGame(int roomid, QString password)
 	sendPostQuery(m_url, data.str(), RequestSetGame);
 }
 
+void MainWindow::showError(QString error)
+{
+	qDebug() << "Displaying" << error;
+	QMessageBox::warning(this, "gpclient", error);
+}
+
 void MainWindow::doneSetGame(QBuffer& buffer, bool error)
 {
 	if(error)
@@ -1121,9 +1127,9 @@ void MainWindow::doneSetGame(QBuffer& buffer, bool error)
 	parseKeyValue(&buffer, info);
 	if(info.value("GAME") == "-1" && m_nGame != -1)
 	{
-		printError(QString::fromUtf8("Bylo zadáno nesprávné heslo"));
-		QMessageBox::warning(this, QString::fromUtf8("Vstup do místnosti"),
-				     QString::fromUtf8("Bylo zadáno nesprávné heslo"));
+		printError(QString::fromUtf8("Nelze vstoupit do místnosti"));
+		QMetaObject::invokeMethod(this, "showError", Qt::QueuedConnection,
+					  Q_ARG(QString, QString::fromUtf8("Bylo zadáno nesprávné heslo nebo je místnost plná.")));
 		m_nGame = -1;
 	}
 	else
